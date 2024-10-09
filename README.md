@@ -156,5 +156,5 @@ Rust não utiliza exceções como outras linguagens, e sim o tipo Result para a 
 - Victor Daniel
 
 ## Referências
-1.Site Oficial do Rust
-2.Metz, C. (2023). Rust: A Linguagem de Programação que Mais Cresce no Mundo. MIT Technology Review.
+- 1.Site Oficial do Rust
+- 2.Metz, C. (2023). Rust: A Linguagem de Programação que Mais Cresce no Mundo. MIT Technology Review.
