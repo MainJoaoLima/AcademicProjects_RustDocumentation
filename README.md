@@ -3,9 +3,13 @@
 Reposítorio da nossa apresentação sobre a linguagem de programação Rust, onde foi abordando sua origem, características e casos de uso.
 
 # Este repositório inclui:
-- **RUST.pptx**: O arquivo principal da apresentação, que inclui todos os slides e explicações detalhadas sobre o Rust, sua história, uso e conceitos técnicos [Apresentação Rust](https://docs.google.com/presentation/d/13EIbcE18h3AD82ldQS1uh_MQkdh1UbAG1zkTpLF8v3w/edit?usp=sharing)
+- **RUST.pptx**: O arquivo da apresentação, que inclui todos os slides e explicações detalhadas sobre o Rust, sua história, uso e conceitos técnicos.
+[Apresentação Rust](https://docs.google.com/presentation/d/13EIbcE18h3AD82ldQS1uh_MQkdh1UbAG1zkTpLF8v3w/edit?usp=sharing)
 
-- **Exemplos de Código**: Trechos de código demonstrando a sintaxe do Rust, tipos de dados e diversos paradigmas de programação, que podem ser testados em
+-  **Documentação.doc**: Arquivo da documentação dos conceitos técnicos do Rust.
+[Documentação](https://docs.google.com/document/d/1h5WY7LeXUb-27CwiDJV8pJb8RfLrKX7zl2-M5RCiNOs/edit?usp=sharing)
+
+- **Exemplos de Código.rs**: Trechos de código demonstrando a sintaxe do Rust, tipos de dados e diversos paradigmas de programação, que podem ser testados em
 [Rust Playground](https://play.rust-lang.org/).
 
 ## Sumário
@@ -26,7 +30,7 @@ Rust foi lançado oficialmente em 2015 com a versão 1.0 e desde então começõ
 
 ## Por que usar Rust?
 - **Desenvolvimento Web**: Utilizando frameworks como Rocket e Actix.
-- **Desenvolvimento de Jogos**: Ideal para aplicações de alta performance, como jogos e processamento de dados.
+- **Desenvolvimento de Jogos**: Ideal para aplicações de alta performance, como jogos e realidade aumentada.
 - **Confiabilidade**: O modelo de ownership do Rust garante segurança de memória e diminuindo os erros de execução.
 - **Produtividade**: O Rust oferece excelente documentação, um compilador amigável e suporte a diversos editores.
 - **Desempenho**: O Rust é altamente eficiente em gerenciamento de memória, ideal para sistemas de baixo nível como kernels e drivers.
