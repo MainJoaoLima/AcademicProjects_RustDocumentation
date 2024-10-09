@@ -3,8 +3,10 @@
 Reposítorio da nossa apresentação sobre a linguagem de programação Rust, onde foi abordando sua origem, características e casos de uso.
 
 # Este repositório inclui:
-- **RUST.pdf**: O arquivo principal da apresentação, que inclui todos os slides e explicações detalhadas sobre o Rust, sua história, uso e conceitos técnicos.
-- **Exemplos de Código**: Trechos de código demonstrando a sintaxe do Rust, tipos de dados e diversos paradigmas de programação, que podem ser testados em [Rust Playground](https://play.rust-lang.org/).
+- **RUST.pptx**: O arquivo principal da apresentação, que inclui todos os slides e explicações detalhadas sobre o Rust, sua história, uso e conceitos técnicos [Apresentação Rust](https://docs.google.com/presentation/d/13EIbcE18h3AD82ldQS1uh_MQkdh1UbAG1zkTpLF8v3w/edit?usp=sharing)
+
+- **Exemplos de Código**: Trechos de código demonstrando a sintaxe do Rust, tipos de dados e diversos paradigmas de programação, que podem ser testados em
+[Rust Playground](https://play.rust-lang.org/).
 
 ## Sumário
 - [Sobre o Rust](#sobre-o-rust)
