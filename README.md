@@ -150,10 +150,10 @@ Panic!() para erros irrecuperáveis.
 Rust não utiliza exceções como outras linguagens, e sim o tipo Result para a maioria dos cenários de tratamento de erros.
 
 ## Contribuidores
-João Luis
-Paulo Sérgio
-Fabrício
-Victor Daniel
+- João Luis
+- Paulo Sérgio
+- Fabrício
+- Victor Daniel
 
 ## Referências
 1.Site Oficial do Rust
