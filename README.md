@@ -39,7 +39,7 @@ Rust suporta tanto tipos de dados primitivos quanto compostos. Exemplos incluem:
 - **Booleanos**: `true`, `false`
 - **Arrays e Tuplas**: Rust permite arrays de tamanho fixo e tuplas com múltiplos tipos.
 ### Exemplo:
-- fn main() {
+fn main() {
     //Tipos Primitivos
     
     // Declaração de inteiros com diferentes tamanhos
