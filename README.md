@@ -25,8 +25,6 @@ Rust foi criado em 2006 por Graydon Hoare, que desejava uma linguagem de program
 Rust foi lançado oficialmente em 2015 com a versão 1.0 e desde então começõu a ser implantado mais e mais por grandes empresas como Meta, Dropbox e Discord. Em 2021, foi fundada a Rust Foundation para apoiar desenvolvedores com bolsas e recursos comunitários.
 
 ## Por que usar Rust?
-Rust tem potencial para ser implementado em diversas áreas como:
-
 - **Desenvolvimento Web**: Utilizando frameworks como Rocket e Actix.
 - **Desenvolvimento de Jogos**: Ideal para aplicações de alta performance, como jogos e processamento de dados.
 - **Confiabilidade**: O modelo de ownership do Rust garante segurança de memória e diminuindo os erros de execução.
