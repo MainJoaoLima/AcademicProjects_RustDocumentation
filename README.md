@@ -24,9 +24,10 @@ Reposítorio da nossa apresentação sobre a linguagem de programação Rust, on
 - [Referências](#referências)
 
 ## Sobre o Rust
-Rust foi criado em 2006 por Graydon Hoare, que desejava uma linguagem de programação que evitasse os erros de memória comuns em linguagens como C e C++. O objetivo do Rust é ser rápido, seguro e concorrente. A linguagem tem crescido rapidamente, especialmente em sistemas de baixo nível.
+A linguagem de programação Rust, foi criada em 2006 por Graydon Hoare, que desejava uma linguagem de programação que evitasse os erros de memória comuns em linguagens como C e C++. O objetivo do Rust é ser rápido, seguro e competitivo. A linguagem tem crescido rapidamente, especialmente em sistemas de baixo nível.
 
-Rust foi lançado oficialmente em 2015 com a versão 1.0 e desde então começõu a ser implantado mais e mais por grandes empresas como Meta, Dropbox e Discord. Em 2021, foi fundada a Rust Foundation para apoiar desenvolvedores com bolsas e recursos comunitários.
+Em 2015,  teve seu lançamento oficial com a versão 1.0 e desde então começou a ser implantado mais e mais por grandes empresas como Meta, Dropbox e Discord. Em 2021, foi fundada a Rust Foundation para apoiar e subsidiar desenvolvedores com bolsas e recursos.
+
 
 ## Por que usar Rust?
 - **Desenvolvimento Web**: Utilizando frameworks como Rocket e Actix.
@@ -38,10 +39,11 @@ Rust foi lançado oficialmente em 2015 com a versão 1.0 e desde então começõ
 ## Tipos de Dados no Rust
 Rust suporta tanto tipos de dados primitivos quanto compostos. Exemplos incluem:
 
-- **Inteiros**: `i8` a `u128` e `isize`
+- **Inteiros**: `i8` a `u128` e `isize` ou `usize`
 - **Ponto Flutuante**: `f32`, `f64`
 - **Booleanos**: `true`, `false`
 - **Arrays e Tuplas**: Rust permite arrays de tamanho fixo e tuplas com múltiplos tipos.
+
 ### Exemplo:
 fn main() {
     //Tipos Primitivos
@@ -125,6 +127,48 @@ Rust usa expressões para computar valores, como operadores aritméticos (+, -, 
 Rust não possui o operador ternário tradicional, mas utiliza expressões if para retornar valores.
 
 ### Exemplo:
+fn main() {
+    // Variáveis com operadores aritméticos
+    let a = 10;
+    let b = 20;
+    let soma = a + b;          // Soma
+    let subtracao = b - a;     // Subtração
+    let multiplicacao = a * b; // Multiplicação
+    let divisao = b / a;       // Divisão
+    let resto = b % a;         // Resto da divisão
+
+    // Variáveis booleanas com operadores lógicos
+    let x = true;
+    let y = false;
+
+    let resultado_and = x && y; // Operador lógico AND
+    let resultado_or = x || y;  // Operador lógico OR
+    let resultado_not = !x;     // Operador lógico NOT
+
+    // Exibindo resultados dos operadores aritméticos
+    println!("Soma de a + b = {}", soma);
+    println!("Subtração de b - a = {}", subtracao);
+    println!("Multiplicação de a * b = {}", multiplicacao);
+    println!("Divisão de b / a = {}", divisao);
+    println!("Resto de b % a = {}", resto);
+
+    // Exibindo resultados dos operadores lógicos
+    println!("x AND y = {}", resultado_and);
+    println!("x OR y = {}", resultado_or);
+    println!("NOT x = {}", resultado_not);
+
+    // Estrutura condicional if-else usando operadores aritméticos e lógicos
+    if a < b && x {
+        println!("a é menor que b e x é verdadeiro.");
+    } else if a == b || y {
+        println!("a é igual a b ou y é verdadeiro.");
+    } else {
+        println!("Nenhuma das condições foi satisfeita.");
+    }
+}
+
+![image](https://github.com/user-attachments/assets/d0e81cbe-9b58-4e8f-8359-47578b0d6762)
+
 
 ## Paradigmas de Programação no Rust
 Rust é uma linguagem multiparadigma, com suporte para:
@@ -133,8 +177,6 @@ Rust é uma linguagem multiparadigma, com suporte para:
 - Programação Funcional: Suporte a closures, iteradores e pattern matching.
 - Programação Orientada a Objetos (POO): Através de traits e estruturas (similares a classes).
 - Programação Concorrente: Concorrência segura através de threads, async/await e canais.
-
-### Exemplo:
 
 ## Concorrência no Rust
 Rust fornece ferramentas robustas para programação concorrente, garantindo segurança de memória através do sistema de ownership. Alguns dos recursos de concorrência incluem:
