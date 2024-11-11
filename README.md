@@ -6,28 +6,29 @@
 # Item 2 - Programa de Verificação de Cadeias em Python
 
 
-  import re
-  
-  pattern = r"-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]"
-  
-  
-  
-  test_cases = [
-      "x[0]",         
-      "x[-2]",        
-      "x['Date']",    
-      'x["Column"]',  
-      "x[0:5]",       
-      "x['Data':'State']"  
-  ]
-  
-  for test in test_cases:
-      
-      match = re.findall(pattern, test)
-      if match:
-          print(f"{test} Valido")
-      else:
-          print(f"{test} Invalido")
+```import re
+
+pattern = r"-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]"
+
+
+
+test_cases = [
+    "x[0]",         
+    "x[-2]",        
+    "x['Date']",    
+    'x["Column"]',  
+    "x[0:5]",       
+    "x['Data':'State']"  
+]
+
+for test in test_cases:
+    
+    match = re.findall(pattern, test)
+    if match:
+        print(f"{test} Valido")
+    else:
+        print(f"{test} Invalido")
+```
 
 ![image](https://github.com/user-attachments/assets/d62fb8d7-cabb-4b74-a537-8c5229a6655f)
 
@@ -35,48 +36,48 @@
 Graphviz
 ![image](https://github.com/user-attachments/assets/42b0fad0-aaa1-4f49-84ac-eea37bb8101d)
 
+```
+digraph AFN { rankdir=LR; node [shape = circle];
 
- digraph AFN { rankdir=LR; node [shape = circle];
- 
- // Estados iniciais e finais
- start [shape=plaintext, label="Start"];
- q13 [shape=doublecircle];
- 
- 
- start -> q0;
- 
- //Número inteiro e numero negativo
- q0 -> q1 [label="-"];
- q0 -> q1 [label="λ"];
- q1 -> q2 [label="[0-9]"];
- q2 -> q2 [label="[0-9]"];
- 
- //Slice de números
- q2 -> q3 [label=":"];
- q3 -> q4 [label="λ"];
- q3 -> q4 [label="-"];
- q4 -> q5 [label="[0-9]"];
- q5 -> q5 [label="[0-9]"];
- 
- // Nome da coluna entre aspas
- q0 -> q6 [label="λ"];
- q6 -> q7 [label="'', '"];
- q7 -> q8 [label="[a-z]"];
- q8 -> q8 [label="[a-z0-9]"];
- q8 -> q9 [label="'', '"];
- 
- //Slice de strings
- q9 -> q10 [label="'', '"];
- q10 -> q11 [label="[a-z]"];
- q11 -> q11 [label="[a-z0-9]"];
- q11 -> q12 [label="'', '"];
- 
- q2-> q13 [label="λ"];
- q5 -> q13 [label="λ"];
- q9 -> q13 [label="λ"];
- q12 -> q13 [label="λ"];
- }
+// Estados iniciais e finais
+start [shape=plaintext, label="Start"];
+q13 [shape=doublecircle];
 
+
+start -> q0;
+
+//Número inteiro e numero negativo
+q0 -> q1 [label="-"];
+q0 -> q1 [label="λ"];
+q1 -> q2 [label="[0-9]"];
+q2 -> q2 [label="[0-9]"];
+
+//Slice de números
+q2 -> q3 [label=":"];
+q3 -> q4 [label="λ"];
+q3 -> q4 [label="-"];
+q4 -> q5 [label="[0-9]"];
+q5 -> q5 [label="[0-9]"];
+
+// Nome da coluna entre aspas
+q0 -> q6 [label="λ"];
+q6 -> q7 [label="'', '"];
+q7 -> q8 [label="[a-z]"];
+q8 -> q8 [label="[a-z0-9]"];
+q8 -> q9 [label="'', '"];
+
+//Slice de strings
+q9 -> q10 [label="'', '"];
+q10 -> q11 [label="[a-z]"];
+q11 -> q11 [label="[a-z0-9]"];
+q11 -> q12 [label="'', '"];
+
+q2-> q13 [label="λ"];
+q5 -> q13 [label="λ"];
+q9 -> q13 [label="λ"];
+q12 -> q13 [label="λ"];
+}
+```
 
 # Rust
 # Apresentação sobre Rust
@@ -125,6 +126,7 @@ Rust suporta tanto tipos de dados primitivos quanto compostos. Exemplos incluem:
 - **Arrays e Tuplas**: Rust permite arrays de tamanho fixo e tuplas com múltiplos tipos.
 
 ### Exemplo:
+```
 fn main() {
     //Tipos Primitivos
     
@@ -199,6 +201,7 @@ fn main() {
     println!("Dinamica: {}", s1);
     println!("imutavel: {}", s2);
 }
+```
 ![image](https://github.com/user-attachments/assets/18edf3a7-76f6-4346-a5f1-185b1f036f6a)
 
 ## Expressões e Operadores
@@ -207,6 +210,7 @@ Rust usa expressões para computar valores, como operadores aritméticos (+, -, 
 Rust não possui o operador ternário tradicional, mas utiliza expressões if para retornar valores.
 
 ### Exemplo:
+```
 fn main() {
     // Variáveis com operadores aritméticos
     let a = 10;
@@ -246,7 +250,7 @@ fn main() {
         println!("Nenhuma das condições foi satisfeita.");
     }
 }
-
+```
 ![image](https://github.com/user-attachments/assets/d0e81cbe-9b58-4e8f-8359-47578b0d6762)
 
 
