@@ -6,90 +6,76 @@
 # Item 2 - Programa de Verificação de Cadeias em Python
 
 
-import re
-
-pattern = r"-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]"
-
-
-
-test_cases = [
-    "x[0]",         
-    "x[-2]",        
-    "x['Date']",    
-    'x["Column"]',  
-    "x[0:5]",       
-    "x['Data':'State']"  
-]
-
-for test in test_cases:
-    
-    match = re.findall(pattern, test)
-    if match:
-        print(f"{test} Valido")
-    else:
-        print(f"{test} Invalido")
+  import re
+  
+  pattern = r"-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]"
+  
+  
+  
+  test_cases = [
+      "x[0]",         
+      "x[-2]",        
+      "x['Date']",    
+      'x["Column"]',  
+      "x[0:5]",       
+      "x['Data':'State']"  
+  ]
+  
+  for test in test_cases:
+      
+      match = re.findall(pattern, test)
+      if match:
+          print(f"{test} Valido")
+      else:
+          print(f"{test} Invalido")
 
 ![image](https://github.com/user-attachments/assets/d62fb8d7-cabb-4b74-a537-8c5229a6655f)
 
 #Item 3 - Autômato Finito Não Determinístico (AFN)
 Graphviz
-![image](https://github.com/user-attachments/assets/ceb64b13-edcd-4b85-868b-1108f5f215ac)
-
-digraph AFN {
-    rankdir=LR;
-    node [shape = circle];
-
-    // Estados iniciais e finais
-    start [shape=plaintext, label="Start"];
-    q26 [shape=doublecircle];
+![image](https://github.com/user-attachments/assets/42b0fad0-aaa1-4f49-84ac-eea37bb8101d)
 
 
-    start -> q0;
-    
-    //Número inteiro e numero negativo
-    q0 -> q1 [label="λ"];
-    q1 -> q2 [label="-"];
-    q1 -> q2 [label="λ"];
-    q2 -> q3 [label="[0-9]"];
-    q3 -> q3 [label="[0-9]"];
-    q3 -> q4 [label="λ"];
-    
-    //Slice de números
-    q0 -> q5 [label="λ"];
-    q5 -> q6 [label="-"];
-    q5 -> q6 [label="λ"];
-    q6 -> q7 [label="λ"];
-    q7 -> q8 [label="[0-9]"];
-    q8 -> q8 [label="[0-9]"];
-    q8 -> q9 [label=":"];
-    q9 -> q10 [label="-"];
-    q9 -> q10 [label="λ"];
-    q10 -> q11 [label="λ"];
-    q11 -> q12 [label="[0-9]"];
-    q12 -> q13 [label="[0-9]"];
-    
-    // Nome da coluna entre aspas
-    q0 -> q14 [label="λ"];
-    q14 -> q15 [label="λ"];
-    q15 -> q16 [label="'', '"];
-    q16 -> q17 [label="[a-z]"];
-    q17 -> q18 [label="[a-z0-9]"];
-    q18 -> q19 [label="'', '"];
-    
-    //Slice de strings
-    q0 -> q20 [label="λ"];
-    q20 -> q21 [label="λ"];
-    q21 -> q22 [label="'', '"];
-    q22 -> q23 [label="[a-z]"];
-    q23 -> q24 [label="[a-z0-9]"];
-    q24 -> q25 [label="'', '"];
-    
-    q4 -> q26 [label="λ"];
-    q13 -> q26 [label="λ"];
-    q19 -> q26 [label="λ"];
-    q25 -> q26 [label="λ"];
-        
-}
+ digraph AFN { rankdir=LR; node [shape = circle];
+ 
+ // Estados iniciais e finais
+ start [shape=plaintext, label="Start"];
+ q13 [shape=doublecircle];
+ 
+ 
+ start -> q0;
+ 
+ //Número inteiro e numero negativo
+ q0 -> q1 [label="-"];
+ q0 -> q1 [label="λ"];
+ q1 -> q2 [label="[0-9]"];
+ q2 -> q2 [label="[0-9]"];
+ 
+ //Slice de números
+ q2 -> q3 [label=":"];
+ q3 -> q4 [label="λ"];
+ q3 -> q4 [label="-"];
+ q4 -> q5 [label="[0-9]"];
+ q5 -> q5 [label="[0-9]"];
+ 
+ // Nome da coluna entre aspas
+ q0 -> q6 [label="λ"];
+ q6 -> q7 [label="'', '"];
+ q7 -> q8 [label="[a-z]"];
+ q8 -> q8 [label="[a-z0-9]"];
+ q8 -> q9 [label="'', '"];
+ 
+ //Slice de strings
+ q9 -> q10 [label="'', '"];
+ q10 -> q11 [label="[a-z]"];
+ q11 -> q11 [label="[a-z0-9]"];
+ q11 -> q12 [label="'', '"];
+ 
+ q2-> q13 [label="λ"];
+ q5 -> q13 [label="λ"];
+ q9 -> q13 [label="λ"];
+ q12 -> q13 [label="λ"];
+ }
 
 
 # Rust
