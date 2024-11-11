@@ -34,7 +34,8 @@ for test in test_cases:
 
 #Item 3 - Autômato Finito Não Determinístico (AFN)
 Graphviz
-![image](https://github.com/user-attachments/assets/42b0fad0-aaa1-4f49-84ac-eea37bb8101d)
+![image](https://github.com/user-attachments/assets/304999ad-48aa-4b86-be95-21a5afaad5df)
+
 
 ```
 digraph AFN { rankdir=LR; node [shape = circle];
@@ -67,15 +68,15 @@ q8 -> q8 [label="[a-z0-9]"];
 q8 -> q9 [label="'', '"];
 
 //Slice de strings
-q9 -> q10 [label="'', '"];
-q10 -> q11 [label="[a-z]"];
-q11 -> q11 [label="[a-z0-9]"];
-q11 -> q12 [label="'', '"];
+q9 -> q10 [label=":"];
+q10 -> q11 [label="'', '"];
+q11 -> q12 [label="[a-z]"];
+q12 -> q12 [label="[a-z0-9]"];
+q12 -> q13 [label="'', '"];
 
 q2-> q13 [label="λ"];
 q5 -> q13 [label="λ"];
 q9 -> q13 [label="λ"];
-q12 -> q13 [label="λ"];
 }
 ```
 
