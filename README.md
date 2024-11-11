@@ -1,3 +1,14 @@
+#Analise Lexica 
+
+#Expressão regular para o reconhecimento de índices de datasets do pandas.
+Criamos uma expressão com REGEX para reconhecimento dos indices de datasets do Pandas com base nos exemplos que foram abordados
+-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]
+ 
+
+
+
+
+
 # Rust
 # Apresentação sobre Rust
 Reposítorio da nossa apresentação sobre a linguagem de programação Rust, onde foi abordando sua origem, características e casos de uso.
