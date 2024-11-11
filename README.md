@@ -1,6 +1,6 @@
-#Analise Lexica 
+# Analise Lexica 
 
-#Expressão regular para o reconhecimento de índices de datasets do pandas.
+# Expressão regular para o reconhecimento de índices de datasets do pandas.
 Criamos uma expressão com REGEX para reconhecimento dos indices de datasets do Pandas com base nos exemplos que foram abordados
 -?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]
  
