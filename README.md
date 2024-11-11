@@ -5,8 +5,8 @@
  
 # Item 2 - Programa de Verificação de Cadeias em Python
 
-
-```import re
+```
+import re
 
 pattern = r"-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]"
 
