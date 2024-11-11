@@ -25,6 +25,11 @@ Para fazer o programa utilizamos a linguagem Python e utilizamos a biblioteca 'r
 
 
 
+# Questão 3 - Conversão da expressão regular para um AFN
+
+
+
+
 
 
 # Rust
