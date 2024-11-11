@@ -6,11 +6,17 @@ Criamos uma expressão com REGEX para reconhecimento dos indices de datasets do 
 
 O número da coluna, que é um número inteiro, positivo, negativo ou zero.
 Ex: x[0], x[10], x[-2]
+
 O nome da coluna entre aspas, simples ou duplas. Considere que os nomes das colunas são formados por letras maiúsculas, minúsculas ou espaços em branco.
+
 Ex: x[‘Date’], x[“New Column”]
+
 Um intervalo (slice) formado por dois números positivos (ou zero) ou dois números negativos, separados por “:”.
+
 Ex: x[0:5], x[2:2], x[-1: -5]
+
 Um intervalo (slice) formado por dois nomes de colunas entre aspas, simples ou duplas.
+
 Ex: x[‘Data’:’State’], x[“District”:’Tested’]
 
 No final a expressão ficou: `-?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] | -?[0-9]+ : - ?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] : [' "] [a-z][a-z0-9]+ [' "]`
