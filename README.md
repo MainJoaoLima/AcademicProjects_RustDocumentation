@@ -5,25 +5,24 @@
  
 # Item 2 - Programa de Verificação de Cadeias
 
-#re.py
-import re #Expressoes regulares
 
-# A expressão Resultante
+import re
+
 pattern = r"-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]"
 
 
-# Testes
+
 test_cases = [
-    "x[0]",         # Número inteiro
-    "x[-2]",        # Número negativo
-    "x['Date']",    # Nome em aspas simples
-    'x["Column"]',  # Nome em aspas duplas
-    "x[0:5]",       # Slice de numeros
-    "x['Data':'State']"  # Slice de strings
+    "x[0]",         
+    "x[-2]",        
+    "x['Date']",    
+    'x["Column"]',  
+    "x[0:5]",       
+    "x['Data':'State']"  
 ]
 
 for test in test_cases:
-    # Expressão para verificar se o termo é valido
+    
     match = re.findall(pattern, test)
     if match:
         print(f"{test} Valido")
