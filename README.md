@@ -1,9 +1,49 @@
 # Analise Lexica 
 
-# Expressão regular para o reconhecimento de índices de datasets do pandas.
-Criamos uma expressão com REGEX para reconhecimento dos indices de datasets do Pandas com base nos exemplos que foram abordados
--?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]
- 
+# Questão 1 - Expressão regular para o reconhecimento de índices de datasets do pandas.
+
+Criamos uma expressão com REGEX para reconhecimento dos indices de datasets do Pandas com base nos seguintes exemplos:
+
+O número da coluna, que é um número inteiro, positivo, negativo ou zero.
+Ex: x[0], x[10], x[-2]
+O nome da coluna entre aspas, simples ou duplas. Considere que os nomes das colunas são formados por letras maiúsculas, minúsculas ou espaços em branco.
+Ex: x[‘Date’], x[“New Column”]
+Um intervalo (slice) formado por dois números positivos (ou zero) ou dois números negativos, separados por “:”.
+Ex: x[0:5], x[2:2], x[-1: -5]
+Um intervalo (slice) formado por dois nomes de colunas entre aspas, simples ou duplas.
+Ex: x[‘Data’:’State’], x[“District”:’Tested’]
+
+No final a expressão ficou: `-?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] | -?[0-9]+ : - ?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] : [' "] [a-z][a-z0-9]+ [' "]`
+
+
+# Questão 2 implementar um programa que utiliza a biblioteca e expressões regulares para verificar se uma cadeia informada é ou não reconhecida como um índice de dataset válido do pandas
+
+Para fazer o programa utilizamos a linguagem Python e utilizamos a biblioteca 're' para reconhecimento das expresões regulares, abaixo o código em python que fizemos para a validação da expressão e das strings aceitas.
+
+import re #Expressoes regulares
+
+# A expressão Resultante
+pattern = r"-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]"
+
+
+# Testes
+test_cases = [
+    "x[0]",         # Número inteiro
+    "x[-2]",        # Número negativo
+    "x['Date']",    # Nome em aspas simples
+    'x["Column"]',  # Nome em aspas duplas
+    "x[0:5]",       # Slice de numeros
+    "x['Data':'State']"  # Slice de strings
+]
+
+for test in test_cases:
+    # Expressão para verificar se o termo é valido
+    match = re.findall(pattern, test)
+    if match:
+        print(f"{test} Valido")
+    else:
+        print(f"{test} Invalido")
+
 
 
 
