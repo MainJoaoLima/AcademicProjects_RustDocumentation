@@ -1,41 +1,96 @@
-# Analise Lexica 
+# Analise Lexica - Exercicio
 
-# Questão 1 - Expressão regular para o reconhecimento de índices de datasets do pandas.
+# Item 1 - Expressão Regular para Índices
+-?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] | -?[0-9]+ : - ?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] : [' "] [a-z][a-z0-9]+ [' "]
+ 
+# Item 2 - Programa de Verificação de Cadeias
 
-Criamos uma expressão com REGEX para reconhecimento dos indices de datasets do Pandas com base nos seguintes exemplos:
+#re.py
+import re #Expressoes regulares
 
-O número da coluna, que é um número inteiro, positivo, negativo ou zero.
-Ex: x[0], x[10], x[-2]
-
-O nome da coluna entre aspas, simples ou duplas. Considere que os nomes das colunas são formados por letras maiúsculas, minúsculas ou espaços em branco.
-
-Ex: x[‘Date’], x[“New Column”]
-
-Um intervalo (slice) formado por dois números positivos (ou zero) ou dois números negativos, separados por “:”.
-
-Ex: x[0:5], x[2:2], x[-1: -5]
-
-Um intervalo (slice) formado por dois nomes de colunas entre aspas, simples ou duplas.
-
-Ex: x[‘Data’:’State’], x[“District”:’Tested’]
-
-No final a expressão ficou: `-?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] | -?[0-9]+ : - ?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] : [' "] [a-z][a-z0-9]+ [' "]`
+# A expressão Resultante
+pattern = r"-?\d+|['\"][\w]+['\"]|-?\d+:-?\d*|['\"][\w]+['\"]:['\"][\w]+['\"]"
 
 
-# Questão 2 implementar um programa que utiliza a biblioteca e expressões regulares para verificar se uma cadeia informada é ou não reconhecida como um índice de dataset válido do pandas
+# Testes
+test_cases = [
+    "x[0]",         # Número inteiro
+    "x[-2]",        # Número negativo
+    "x['Date']",    # Nome em aspas simples
+    'x["Column"]',  # Nome em aspas duplas
+    "x[0:5]",       # Slice de numeros
+    "x['Data':'State']"  # Slice de strings
+]
 
-Para fazer o programa utilizamos a linguagem Python e utilizamos a biblioteca 're' para reconhecimento das expresões regulares, abaixo o código em python que fizemos para a validação da expressão e das strings aceitas.
+for test in test_cases:
+    # Expressão para verificar se o termo é valido
+    match = re.findall(pattern, test)
+    if match:
+        print(f"{test} Valido")
+    else:
+        print(f"{test} Invalido")
+
+![image](https://github.com/user-attachments/assets/d62fb8d7-cabb-4b74-a537-8c5229a6655f)
+
+#Item 3 - Autômato Finito Não Determinístico (AFN)
+Graphviz
+![image](https://github.com/user-attachments/assets/ceb64b13-edcd-4b85-868b-1108f5f215ac)
+
+digraph AFN {
+    rankdir=LR;
+    node [shape = circle];
+
+    // Estados iniciais e finais
+    start [shape=plaintext, label="Start"];
+    q26 [shape=doublecircle];
 
 
-
-
-
-
-# Questão 3 - Conversão da expressão regular para um AFN
-
-
-
-
+    start -> q0;
+    
+    //Número inteiro e numero negativo
+    q0 -> q1 [label="λ"];
+    q1 -> q2 [label="-"];
+    q1 -> q2 [label="λ"];
+    q2 -> q3 [label="[0-9]"];
+    q3 -> q3 [label="[0-9]"];
+    q3 -> q4 [label="λ"];
+    
+    //Slice de números
+    q0 -> q5 [label="λ"];
+    q5 -> q6 [label="-"];
+    q5 -> q6 [label="λ"];
+    q6 -> q7 [label="λ"];
+    q7 -> q8 [label="[0-9]"];
+    q8 -> q8 [label="[0-9]"];
+    q8 -> q9 [label=":"];
+    q9 -> q10 [label="-"];
+    q9 -> q10 [label="λ"];
+    q10 -> q11 [label="λ"];
+    q11 -> q12 [label="[0-9]"];
+    q12 -> q13 [label="[0-9]"];
+    
+    // Nome da coluna entre aspas
+    q0 -> q14 [label="λ"];
+    q14 -> q15 [label="λ"];
+    q15 -> q16 [label="'', '"];
+    q16 -> q17 [label="[a-z]"];
+    q17 -> q18 [label="[a-z0-9]"];
+    q18 -> q19 [label="'', '"];
+    
+    //Slice de strings
+    q0 -> q20 [label="λ"];
+    q20 -> q21 [label="λ"];
+    q21 -> q22 [label="'', '"];
+    q22 -> q23 [label="[a-z]"];
+    q23 -> q24 [label="[a-z0-9]"];
+    q24 -> q25 [label="'', '"];
+    
+    q4 -> q26 [label="λ"];
+    q13 -> q26 [label="λ"];
+    q19 -> q26 [label="λ"];
+    q25 -> q26 [label="λ"];
+        
+}
 
 
 # Rust
