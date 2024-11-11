@@ -3,7 +3,7 @@
 # Item 1 - Expressão Regular para Índices
 -?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] | -?[0-9]+ : - ?[0-9]+ | [' "] [a-z][a-z0-9]+ [' "] : [' "] [a-z][a-z0-9]+ [' "]
  
-# Item 2 - Programa de Verificação de Cadeias
+# Item 2 - Programa de Verificação de Cadeias em Python
 
 
 import re
